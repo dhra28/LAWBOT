@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Legal Information Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            border-radius: 10px;
+            animation: fadeIn 1s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 40px;
+            animation: slideInLeft 1s ease;
+        }
+
+        label {
+            color:white;
+            padding:40px;
+            margin-top:20px;
+            font-size:50px;
+            font-weight:bold;
+        }
+        h2{
+            color:#333;
+        }
+        p {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .parallax {
+            background-image: url('{{url_for("static", filename="information.jpg")}}');
+            height: 400px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            border-radius: 10px;
+            animation: zoomIn 1s ease;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: justify;
+            color: #333;
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.9);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="parallax">
+
+        <label>Information</label>
+  
+</div>
+<div class="container">
+    <div class="content">
+        <section>
+            <h2>About Our Legal Information Chatbot</h2>
+            <p>Welcome to our legal information chatbot, your trusted source for accurate and reliable legal guidance.
+                Our chatbot is designed to provide users with quick access to essential legal information in a convenient
+                and user-friendly manner.</p>
+        </section>
+        <section>
+            <h2>Our Mission</h2>
+            <img src="{{url_for('static', filename='mission.jpg')}}" alt="Mission Image" style="width: 100%; border-radius: 10px;">
+            <p>At Legal Genius, our mission is to empower individuals and businesses with knowledge of their legal rights
+                and obligations. We understand that navigating the legal landscape can be complex and overwhelming. That's
+                why we're committed to simplifying the process by offering clear and concise explanations of legal concepts
+                and procedures.</p>
+            <p>We believe that access to legal information is fundamental to ensuring justice and equality for all. By providing
+                users with easy-to-understand legal guidance, we aim to bridge the gap between complex legal jargon and everyday
+                understanding. Our mission is rooted in the belief that everyone deserves to have the information they need to
+                make informed decisions and protect their rights.</p>
+            <p>Furthermore, we are dedicated to promoting legal literacy and fostering a greater understanding of the law within
+                our communities. Through educational initiatives and outreach programs, we strive to empower individuals to advocate
+                for themselves and navigate legal challenges with confidence.</p>
+        </section>
+        <section>
+            <h2>How It Works</h2>
+            <img src='{{url_for("static", filename="how it works.jpg")}}' alt="How It Works Image" style="width: 100%; border-radius: 10px;">
+            <p>Our chatbot utilizes advanced natural language processing technology to understand your questions and provide
+                relevant legal information. Whether you're seeking guidance on contract law, employment rights, or intellectual
+                property, our chatbot is here to help.</p>
+        </section>
+        <section>
+            <h2>Accuracy and Reliability</h2>
+            <img src="{{url_for('static', filename='accuracy.jpg')}}" alt="Accuracy and Reliability Image" style="width: 100%; border-radius: 10px;">
+            <p>We recognize the importance of accuracy when it comes to legal information. That's why our chatbot is trained
+                on a vast database of reliable legal sources and undergoes regular updates to ensure that the information provided
+                is up-to-date and accurate.</p>
+        </section>
+        <section>
+            <h2>Privacy and Security</h2>
+            <img src="{{url_for('static', filename='privacy.jpg')}}" alt="Privacy and Security Image" style="width: 100%; border-radius: 10px;">
+            <p>Your privacy and security are our top priorities. Our chatbot operates on a secure platform, and we are committed
+                to protecting your personal information. Rest assured that any information you provide to our chatbot is treated
+                with the utmost confidentiality.</p>
+        </section>
+    </div>
+</div>
+<footer>
+    <p>Contact Us: flashfirm@gmail.com</p>
+</footer>
+</body>
+</html>

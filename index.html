@@ -6,53 +6,36 @@
     <title>FLASH FIRM</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('background.jpg'); 
+            background-image: url('{{ url_for("static", filename="still-life-with-scales-justice.jpg") }}');
             background-attachment: fixed;
             background-size: cover;
             scroll-behavior: smooth;
-            color: #333; /* Text color */
         }
-
-        /* Header Styles */
-        header {
+        h1 {
             text-align: center;
-            padding: 20px 0;
+            font-size: 40px;
+            margin: 40px 0;
+            color: #06a3ae;
         }
-
-        header h1 {
-            font-size: 48px;
-            margin: 10px 0;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
-        }
-
-        /* Navigation Styles */
         nav {
-            text-align: center;
-            margin-top: 20px;
+            text-align: right;
+            margin: 0px 20px;
         }
-
         nav a {
             background-color: #06a3ae;
             opacity: 0.8;
             border-radius: 10px;
             padding: 10px 20px;
-            color: #fff;
+            color: white;
             text-decoration: none;
-            margin: 0 10px;
-            transition: background-color 0.3s ease;
         }
-
         nav a:hover {
             background-color: #45a049;
         }
-
-        /* Content Styles */
         .content {
             width: 80%;
             margin: 0 auto;
@@ -62,19 +45,13 @@
             text-align: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             position: relative;
-            margin-top: 20px;
         }
-
-        .content h2 {
+        .mission {
+            margin-bottom: 40px;
+        }
+        .mission h2 {
             color: #06a3ae;
         }
-
-        .content p {
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        /* Query Form Styles */
         .query {
             margin-top: 20px;
             padding: 20px;
@@ -85,7 +62,6 @@
             margin: 20px auto;
             position: relative;
         }
-
         .query::before {
             content: '';
             position: absolute;
@@ -98,14 +74,9 @@
             border-right: 10px solid transparent;
             border-bottom: 10px solid #f9f9f9;
         }
-
         #input-group {
-            display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
         }
-
         input[type="text"] {
             width: calc(100% - 120px);
             height: 40px;
@@ -116,7 +87,6 @@
             border-radius: 20px;
             flex-grow: 1;
         }
-
         button {
             background-color: #4caf50;
             color: #fff;
@@ -124,126 +94,85 @@
             border: none;
             border-radius: 20px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
-
         button:hover {
             background-color: #45a049;
         }
-
         .voice-icon {
             margin-left: 10px;
             font-size: 24px;
             cursor: pointer;
             color: #06a3ae;
         }
-
         .voice-icon:hover {
             color: #45a049;
         }
-
-        /* Footer Styles */
+        #foot p {
+            margin-bottom: 10px;
+            padding: 2px;
+        }
+        #foot i {
+            padding: 5px;
+        }
+        .bot-response {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #06a3ae;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .bot-response p {
+            margin-bottom: 10px;
+        }
+        .container1 {
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            color: black;
+            margin: 20px;
+            font-size: 35px;
+            font-weight: bold;
+        }
         footer {
             background-color: rgba(255, 255, 255, 0.8);
             text-align: center;
             padding: 20px 0;
             border-radius: 0 0 10px 10px;
-            margin-top: 20px;
         }
-
-        footer p {
-            margin-bottom: 10px;
-            padding: 2px;
-        }
-
-        footer i {
-            padding: 5px;
-        }
-
-        footer a {
-            color: #8b8787;
+        a {
             text-decoration: none;
-            transition: color 0.3s ease;
+            color: #8b8787;
         }
-
-        footer a:hover {
-            color: #06a3ae;
+        #topic {
+            margin-top: -30px;
         }
-
-        /* Form Styles */
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        input[type="submit"] {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
+        .content {
+            margin-top: 15px;
         }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-xI5l0tAq+uHC3jO5QUCj3vKY1uA5PL8v/Jx0ENqpQ8C+rs9o8fQ2Fcf40d4a7kGcbwS/HOJFobN3G5+IDtLxoQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header>
-        <h1><i class="fas fa-balance-scale"></i> FLASH FIRM</h1>
-    </header>
-    <nav>
-        <a href="#about"><i class="fas fa-info-circle"></i> About</a>
-        <a href="#query"><i class="fas fa-question-circle"></i> Ask a Question</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contact Us</a>
+    <h1><i class="fas fa-balance-scale"></i> FLASH FIRM</h1>
+    <nav id="topic">
+        <a href="#info"><i class="fas fa-info-circle"></i> About</a>
+        <a href="#foot"><i class="fas fa-envelope"></i> Contact Us</a>
     </nav>
-    <div class="content" id="about">
-        <h2>About Us</h2>
-        <section>
-            <p>Welcome to Flash Firm, your trusted source for legal guidance in India. We are dedicated to empowering individuals with knowledge of their legal rights and obligations. Our mission is to create a society where every citizen is well-informed about the law.</p>
-        </section>
-        <section>
+    <div class="content">
+        <div class="mission">
             <h2>Our Mission</h2>
-            <p>At Flash Firm, we are on a mission to revolutionize legal awareness and empower individuals with their rights in India. Our vision is to create a society where every citizen is well-informed about their legal rights and can confidently navigate the legal system.</p>
+            <p>At Flash firm, we are on a mission to revolutionize legal awareness and empower individuals with their rights in India. Our vision is to create a society where every citizen is well-informed about their legal rights and can confidently navigate the legal system.</p>
             <p>Constitutional rights are the fundamental rights guaranteed to individuals by a constitution, typically the constitution of a nation or state. These rights often include freedoms such as freedom of speech, freedom of religion, freedom of the press, the right to a fair trial, the right to privacy, and many others. Constitutional rights are there to protect individuals from government overreach and ensure that certain fundamental liberties are upheld. They vary from one country to another, depending on the specific constitution in place and the legal traditions of the country.</p>
-        </section>
-        <section>
-            <h2>How It Works</h2>
-            <p>Our chatbot utilizes advanced natural language processing technology to understand your questions and provide relevant legal information. Whether you're seeking guidance on contract law, employment rights, or intellectual property, our chatbot is here to help.</p>
-        </section>
-        <section>
-            <h2>Accuracy and Reliability</h2>
-            <p>We recognize the importance of accuracy when it comes to legal information. That's why our chatbot is trained on a vast database of reliable legal sources and undergoes regular updates to ensure that the information provided is up-to-date and accurate.</p>
-        </section>
-    </div>
-    <div class="content" id="query">
-        <h2>Ask a Legal Question</h2>
+        </div>
         <div class="query">
-            <p>Got a legal question? Ask us!</p>
+            <p>Give your query regarding law.</p>
             <form id="query-form" action="/chat" method="post">
                 <div id="input-group">
                     <input type="text" name="user_message" id="user_message" placeholder="Write Your Query" required>
@@ -251,69 +180,92 @@
                     <button type="submit">Send</button>
                 </div>
             </form>
+            <div id="bot-response-container" class="bot-response" style="display: {% if bot_response %}block{% else %}none{% endif %};">
+                <p><strong>You:</strong> <span id="user-message">{{ user_message }}</span></p>
+                <p><strong>Expert:</strong> <span id="bot-response">{{ bot_response }}</span></p>
+            </div>
+        </div>       
+    </div>
+    <div class="container1" id="info">
+        <center><label>About Us</label></center>
+        <div class="content">
+            <section>
+                <h2>About Our Legal Information Chatbot</h2>
+                <p>Welcome to our legal information chatbot, your trusted source for accurate and reliable legal guidance.
+                    Our chatbot is designed to provide users with quick access to essential legal information in a convenient
+                    and user-friendly manner.</p>
+            </section>
+            <section>
+                <h2>Our Mission</h2>
+                <img src="{{ url_for('static', filename='miss.jpeg') }}" alt="Mission Image" style="width:100%; border-radius: 10px;">
+                <p>At Legal Genius, our mission is to empower individuals and businesses with knowledge of their legal rights
+                    and obligations. We understand that navigating the legal landscape can be complex and overwhelming. That's
+                    why we're committed to simplifying the process by offering clear and concise explanations of legal concepts
+                    and procedures.</p>
+                <p>We believe that access to legal information is fundamental to ensuring justice and equality for all. By providing
+                    users with easy-to-understand legal guidance, we aim to bridge the gap between complex legal jargon and everyday
+                    understanding. Our mission is rooted in the belief that everyone deserves to have the information they need to
+                    make informed decisions and protect their rights.</p>
+                <p>Furthermore, we are dedicated to promoting legal literacy and fostering a greater understanding of the law within
+                    our communities. Through educational initiatives and outreach programs, we strive to empower individuals to advocate
+                    for themselves and navigate legal challenges with confidence.</p>
+            </section>
+            <section>
+                <h2>How It Works</h2>
+                <img src="{{ url_for('static', filename='howit.jpeg') }}" alt="How It Works Image" style="width: 100%; border-radius: 10px;">
+                <p>Our chatbot utilizes advanced natural language processing technology to understand your questions and provide
+                    relevant legal information. Whether you're seeking guidance on contract law, employment rights, or intellectual
+                    property, our chatbot is here to help.</p>
+            </section>
+            <section>
+                <h2>Accuracy and Reliability</h2>
+                <img src="{{ url_for('static', filename='accuracy.jpg') }}" alt="Accuracy and Reliability Image" style="width: 100%; border-radius: 10px;">
+                <p>We recognize the importance of accuracy when it comes to legal information. That's why our chatbot is trained
+                    on a vast database of reliable legal sources and undergoes regular updates to ensure that the information provided
+                    is up-to-date and accurate.</p>
+            </section>
+            <section>
+                <h2>Privacy and Security</h2>
+                <img src="{{ url_for('static', filename='privacy.jpg') }}" alt="Privacy and Security Image" style="width: 100%; border-radius: 10px;">
+                <p>Your privacy and security are our top priorities. Our chatbot operates on a secure platform, and we are committed
+                    to protecting your personal information. Rest assured that any information you provide to our chatbot is treated
+                    with the utmost confidentiality.</p>
+            </section>
         </div>
     </div>
-    <div class="content" id="contact">
-        <h2>Contact Us</h2>
-        <section>
-            <p>Have a question or need support? Get in touch with us using the form below:</p>
-            <form id="contact-form" action="/contact" method="post" onsubmit="return validateForm()">
-                <div>
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div>
-                    <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="phone">Your Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div>
-                    <label for="query">Your Query:</label>
-                    <textarea id="query" name="query" required></textarea>
-                </div>
-                <div>
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
-        </section>
-    </div>
-    <footer>
+    <footer id="foot">
         <p>Contact Us: <a href="mailto:flashfirm@gmail.com"><i class="fas fa-envelope"></i> flashfirm@gmail.com</a></p>
-        <p>Address: No.4H, East Thillainagar, Woriyur, Trichy - 620003</p>
-        <p>Phone: <a href="tel:+91904312767859"><i class="fas fa-phone"></i> 0431 2767859</a>, <a href="tel:+919003977663"><i class="fas fa-phone"></i> 9003977663</a></p>
+        <p><a href="#"><i class="fas fa-home"></i> Address: No.4H, East Thillainagar, Woriyur, Trichy - 620003</a></p>
+        <p><a href="https://wa.me/1234567890"><i class="fab fa-whatsapp"></i> Phone: 0431 2767859 , 9003977663</a></p>
     </footer>
     <script>
-        function validateForm() {
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var phone = document.getElementById('phone').value;
-            var             query = document.getElementById('query').value;
+        const voiceIcon = document.getElementById('voice-icon');
+        const queryForm = document.getElementById('query-form');
+        const userMessageInput = document.getElementById('user_message');
 
-// Simple validation
-if (name.trim() === '' || email.trim() === '' || phone.trim() === '' || query.trim() === '') {
-    alert('Please fill in all fields.');
-    return false;
-}
+        // Initialize SpeechRecognition object
+        const recognition = new webkitSpeechRecognition() || SpeechRecognition(); // For browser compatibility
+        recognition.continuous = false;
+        recognition.lang = 'en-US';
 
-// Email validation
-var emailRegex = /\S+@\S+\.\S+/;
-if (!emailRegex.test(email)) {
-    alert('Please enter a valid email address.');
-    return false;
-}
+        // Event listener for clicking on the microphone icon
+        voiceIcon.addEventListener('click', () => {
+            recognition.start();
+        });
 
-// Phone number validation
-var phoneRegex = /^\d{10}$/;
-if (!phoneRegex.test(phone)) {
-    alert('Please enter a valid phone number.');
-    return false;
-}
+        // Event listener for speech recognition result
+        recognition.onresult = function(event) {
+            const transcript = event.results[0][0].transcript;
+            userMessageInput.value = transcript;
+        };
 
-return true;
-}
-</script>
+        // Event listener for form submission
+        queryForm.addEventListener('submit', function(event) {
+            // Prevent default form submission
+            event.preventDefault();
+            // Submit the form using JavaScript
+            this.submit();
+        });
+    </script>
 </body>
 </html>
