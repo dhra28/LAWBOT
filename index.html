@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLASH FIRM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg'); 
+            background-attachment: fixed;
+            background-size: cover;
+            scroll-behavior: smooth;
+            color: #333; /* Text color */
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 10px 0;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+        }
+
+        /* Navigation Styles */
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav a {
+            background-color: #06a3ae;
+            opacity: 0.8;
+            border-radius: 10px;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #45a049;
+        }
+
+        /* Content Styles */
+        .content {
+            width: 80%;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .content h2 {
+            color: #06a3ae;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Query Form Styles */
+        .query {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .query::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #f9f9f9;
+        }
+
+        #input-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 120px);
+            height: 40px;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            flex-grow: 1;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .voice-icon {
+            margin-left: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #06a3ae;
+        }
+
+        .voice-icon:hover {
+            color: #45a049;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 0 0 10px 10px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            padding: 2px;
+        }
+
+        footer i {
+            padding: 5px;
+        }
+
+        footer a {
+            color: #8b8787;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #06a3ae;
+        }
+
+        /* Form Styles */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-xI5l0tAq+uHC3jO5QUCj3vKY1uA5PL8v/Jx0ENqpQ8C+rs9o8fQ2Fcf40d4a7kGcbwS/HOJFobN3G5+IDtLxoQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-balance-scale"></i> FLASH FIRM</h1>
+    </header>
+    <nav>
+        <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="#query"><i class="fas fa-question-circle"></i> Ask a Question</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact Us</a>
+    </nav>
+    <div class="content" id="about">
+        <h2>About Us</h2>
+        <section>
+            <p>Welcome to Flash Firm, your trusted source for legal guidance in India. We are dedicated to empowering individuals with knowledge of their legal rights and obligations. Our mission is to create a society where every citizen is well-informed about the law.</p>
+        </section>
+        <section>
+            <h2>Our Mission</h2>
+            <p>At Flash Firm, we are on a mission to revolutionize legal awareness and empower individuals with their rights in India. Our vision is to create a society where every citizen is well-informed about their legal rights and can confidently navigate the legal system.</p>
+            <p>Constitutional rights are the fundamental rights guaranteed to individuals by a constitution, typically the constitution of a nation or state. These rights often include freedoms such as freedom of speech, freedom of religion, freedom of the press, the right to a fair trial, the right to privacy, and many others. Constitutional rights are there to protect individuals from government overreach and ensure that certain fundamental liberties are upheld. They vary from one country to another, depending on the specific constitution in place and the legal traditions of the country.</p>
+        </section>
+        <section>
+            <h2>How It Works</h2>
+            <p>Our chatbot utilizes advanced natural language processing technology to understand your questions and provide relevant legal information. Whether you're seeking guidance on contract law, employment rights, or intellectual property, our chatbot is here to help.</p>
+        </section>
+        <section>
+            <h2>Accuracy and Reliability</h2>
+            <p>We recognize the importance of accuracy when it comes to legal information. That's why our chatbot is trained on a vast database of reliable legal sources and undergoes regular updates to ensure that the information provided is up-to-date and accurate.</p>
+        </section>
+    </div>
+    <div class="content" id="query">
+        <h2>Ask a Legal Question</h2>
+        <div class="query">
+            <p>Got a legal question? Ask us!</p>
+            <form id="query-form" action="/chat" method="post">
+                <div id="input-group">
+                    <input type="text" name="user_message" id="user_message" placeholder="Write Your Query" required>
+                    <i id="voice-icon" class="fas fa-microphone voice-icon"></i><br>
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="content" id="contact">
+        <h2>Contact Us</h2>
+        <section>
+            <p>Have a question or need support? Get in touch with us using the form below:</p>
+            <form id="contact-form" action="/contact" method="post" onsubmit="return validateForm()">
+                <div>
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="phone">Your Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div>
+                    <label for="query">Your Query:</label>
+                    <textarea id="query" name="query" required></textarea>
+                </div>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </section>
+    </div>
+    <footer>
+        <p>Contact Us: <a href="mailto:flashfirm@gmail.com"><i class="fas fa-envelope"></i> flashfirm@gmail.com</a></p>
+        <p>Address: No.4H, East Thillainagar, Woriyur, Trichy - 620003</p>
+        <p>Phone: <a href="tel:+91904312767859"><i class="fas fa-phone"></i> 0431 2767859</a>, <a href="tel:+919003977663"><i class="fas fa-phone"></i> 9003977663</a></p>
+    </footer>
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var             query = document.getElementById('query').value;
+
+// Simple validation
+if (name.trim() === '' || email.trim() === '' || phone.trim() === '' || query.trim() === '') {
+    alert('Please fill in all fields.');
+    return false;
+}
+
+// Email validation
+var emailRegex = /\S+@\S+\.\S+/;
+if (!emailRegex.test(email)) {
+    alert('Please enter a valid email address.');
+    return false;
+}
+
+// Phone number validation
+var phoneRegex = /^\d{10}$/;
+if (!phoneRegex.test(phone)) {
+    alert('Please enter a valid phone number.');
+    return false;
+}
+
+return true;
+}
+</script>
+</body>
+</html>
